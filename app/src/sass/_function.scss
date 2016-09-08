@@ -1,0 +1,70 @@
+.f-fl {
+  float: left;
+}
+.f-fr {
+  float: right;
+}
+.f-wh {
+  width: 50%;
+}
+.f-wf {
+  @extend %width-full;
+}
+.f-db {
+  display: block;
+}
+.f-ib {
+  display: inline-block;
+}
+.f-dn {
+  display: none;
+}
+
+.f-tal {
+  text-align: left!important;
+}
+.f-tac {
+  text-align: center!important;
+}
+.f-tar {
+  text-align: right!important;
+}
+.f-wwb {
+  white-space: normal;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.f-wsn {
+  white-space: nowrap;
+  word-wrap: normal;
+  word-break: keep-all;
+}
+.f-toe {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.f-m0 {
+  margin: 0!important;
+}
+.f-p0 {
+  padding: 0!important;
+}
+.f-b0 {
+  border: none!important;
+}
+.f-sr-only { /*screen reader only*/
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+}
+.f-cf:after { /*clear fix*/
+  display: block;
+  visibility: hidden;
+  content: '';
+  clear: both;
+  height: 0;
+}

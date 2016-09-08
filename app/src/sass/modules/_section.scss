@@ -1,0 +1,119 @@
+.m-sec {
+  position: relative;
+
+  &.s-bg-cov {
+    padding-top: 34%;
+  }
+
+  &-gd { /*guide*/
+    padding: 3% 0;
+
+    .u-corner {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      margin-left: -$cornerWidth;
+      border-bottom-color: $grayUltraLight;
+      //@include transform-origin(0, 100%);
+      //@include rotate(180deg);
+    }
+  }
+  &-ct {
+    padding: 6% 0;
+  }
+  &-ct:not(.g-mn) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    .u-center {
+      height: 100%;
+    }
+  }
+  &-hr {
+    width: 30%;
+    margin-top: $contextSpace * 4;
+    border-color: transparent;
+    background-color: $black;
+  }
+
+  .m-lst {
+    padding-top: 34px;
+    padding-right: $gridSpace;
+    padding-left: $gridSpace;
+
+    .item {
+      &-vi {
+        @include border-radius(50%);
+      }
+
+      &:hover {
+        .u-h4 {
+          color: $red;
+        }
+      }
+    }
+
+    &.m-sec-lst1 {
+      .item {
+        @include flex(0 0 28%);
+        padding: $contextSpace * 2;
+        overflow: visible;
+
+        &-vi {
+          width: 68px;
+          height: 68px;
+          margin-top: -34px - $contextSpace * 2;
+          margin-left: auto;
+          margin-right: auto;
+          background-color: $black;
+        }
+        .u-h4 {
+          margin-top: $contextSpace * 2;
+        }
+
+        &:hover {
+          .item-vi,
+          .m-sec-hr {
+            background-color: $red;
+          }
+        }
+      }
+    }
+
+    &.m-sec-lst2 {
+      .item {
+        @include flex(0 0 46%);
+        margin: $contextSpace * 2 0;
+
+        &-vi {
+          width: 78px;
+          height: 78px;
+          border: 2px solid $white;
+          background-color: $white;
+        }
+
+        &:hover {
+          .item-vi {
+            border-color: $red;
+            background-color: transparent;
+          }
+        }
+      }
+    }
+  }
+
+  .u-btn + .u-h2 {
+    margin-top: $contextSpace * 6;
+  }
+}
+
+@media (min-width: 480px) {
+  .m-sec-btns {
+    display: inline-block;
+    min-width: 480px;
+  }
+}
+

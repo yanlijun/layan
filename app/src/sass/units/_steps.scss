@@ -1,0 +1,41 @@
+.u-fs {
+
+  &-opt {
+    @extend %display-flex;
+
+    &.shot {
+      width: 66%;
+      margin: 0 auto;
+    }
+
+    li {
+      @include flex(1);
+      border-bottom: 1px solid $grayDark;
+      text-align: center;
+
+      &.sel {
+        border-color: $red;
+        color: $red;
+      }
+    }
+  }
+  &-cnt {
+    .item { /*container*/
+      display: none;
+      padding: $gridSpace * 2 0;
+
+      &.sel {
+        display: block;
+      }
+      .forms {
+        width: 400px;
+        margin: 0 auto;
+
+        &.m-fd {
+          width: 400px / (1 - .2);
+
+        }
+      }
+    }
+  }
+}

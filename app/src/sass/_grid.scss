@@ -1,0 +1,68 @@
+.g-doc {
+  @extend %display-flex;
+  @extend %grid-min-width;
+  min-height: 100%;
+  @include flex-direction(column);
+}
+.g-hd {
+  //min-height: 100px;
+  .logo {
+    max-height: 28px;
+  }
+  &-abs {
+    position: absolute;
+    z-index: 9999;
+    @extend %width-full;
+    @extend %grid-min-width;
+  }
+  &-line {
+    height: 3px;
+    @include background(linear-gradient(90deg, #e5493a, #e5493a 50%, transparent 50%));
+    background-color: #919191;
+  }
+}
+.g-bd {
+  @include flex(1 0);
+}
+.g-ft {
+  padding-top: $gridSpace * 2;
+  padding-bottom: $gridSpace * 2;
+  font-size: 15px;
+}
+
+.g-mn {
+  @extend %grid-max-width;
+  margin: 0 auto;
+  padding-right: $gridSpace;
+  padding-left: $gridSpace;
+  .inside {
+    margin-left: -$gridSpace;
+    margin-right: -$gridSpace;
+  }
+  &.ct {
+    padding: $gridSpace * 3;
+  }
+}
+
+/*columns*/
+.g-col {
+  @extend %display-flex;
+  &-cell {
+    @include flex(1);
+  }
+  &-cell.u-full {
+    @include flex(0 0 100%);
+  }
+  &-cell.u-half {
+    @include flex(0 0 50%);
+  }
+  &-cell.u-1of3 {
+    @include flex(0 0 33.3333%);
+  }
+  &-cell.u-1of4 {
+    @include flex(0 0 25%);
+  }
+  &-cell.u-1of5 {
+    @include flex(0 0 20%);
+  }
+}

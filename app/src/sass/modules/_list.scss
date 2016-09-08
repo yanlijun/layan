@@ -1,0 +1,33 @@
+.m-lst {
+  @extend %display-flex;
+  @include flex-wrap(wrap);
+
+  &.around {
+    @include justify-content(space-around);
+  }
+  &.between {
+    @include justify-content(space-between);
+  }
+
+  &.row-items .item {
+    @extend %display-flex;
+
+    &-vi,  /*view*/
+    &-op { /*operating*/
+      width: 20%;
+    }
+    &-ct {
+      @include flex(1 0);
+      padding: 0 $contextSpace;
+
+      &.u-center,
+      &.u-around,
+      &.u-between {
+        @include flex-direction(column);
+      }
+      &.u-center {
+        @include align-items(flex-start);
+      }
+    }
+  }
+}

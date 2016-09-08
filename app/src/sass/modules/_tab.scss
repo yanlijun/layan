@@ -1,0 +1,41 @@
+.m-tab {
+  &-opt {
+    li {
+      display: inline-block;
+      margin-right: $gridSpace * 2;
+    }
+    a {
+      font-size: 22px;
+      color: $black;
+    }
+    a:hover,
+    li.sel a {
+      color: $redLight;
+    }
+  }
+  &-cnt {
+    .item { /*container*/
+      display: none;
+      padding: $gridSpace 0;
+      &.sel {
+        display: block;
+      }
+      &>ul>li {
+        padding-top: $contextSpace;
+        padding-bottom: $contextSpace;
+
+        &.main {
+          padding: $gridSpace * 4;
+          img {
+            max-width: 100%;
+          }
+        }
+        .m-fd {
+          margin-top: $gridSpace;
+          padding: $contextSpace;
+          border: 1px solid $grayLight;
+        }
+      }
+    }
+  }
+}

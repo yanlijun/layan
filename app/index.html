@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>My AngularJS App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="dist/css/style.min.css">
+</head>
+<body>
+<!--[if lt IE 7]>
+<p>您使用的是已经<strong>过时</strong>的浏览器。请<a href="http://browsehappy.com/">升级</a>到最新版本，或使用其他先进浏览器。</p>
+<![endif]-->
+
+
+<ul class="menu" ng-controller="MenuCtrl as nav">
+    <li ng-class="{active:nav.isActive('/{{menu.url}}')}" ng-repeat="menu in nav.menus">
+        <a href="#!/{{menu.url}}">{{menu.name}}</a>
+    </li>
+
+    <li ng-if="nav.curr">hidden</li>
+</ul>
+
+<div ng-view></div>
+
+<div>Angular seed app: v<span app-version></span></div>
+
+
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="dist/js/app.min.js"></script>
+<script src="components/version/version.js"></script>
+<script src="components/version/version-directive.js"></script>
+<script src="components/version/interpolate-filter.js"></script>
+<script>
+    angular.element(document).ready(function() {
+        var menu = document.getElementsByClassName('menu')[0];
+        var menuLi = menu.getElementsByTagName('li');
+
+        angular.forEach(menuLi, function(item, i) {
+            item.onclick = function() {
+                if (this.className) {
+                    //this.className = '';
+                } else {
+                    this.className = 'hover';
+                }
+            }
+        });
+    });
+</script>
+</body>
+</html>
