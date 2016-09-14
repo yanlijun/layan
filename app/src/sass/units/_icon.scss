@@ -2,6 +2,7 @@
 
 .u-ico {
   display: inline-block;
+  text-indent: -9999px;
   vertical-align: middle;
 
   &-play {
@@ -27,7 +28,7 @@
 
 $u-ico-spacing: 25px;
 $u-ico-position: 50%;
-$u-ico-sprite-dimensions: ture;
+//$u-ico-sprite-dimensions: ture;
 @import "u-ico/*.png";
 @include all-u-ico-sprites;
 

@@ -14,7 +14,7 @@ body {
   font-size: $baseFontSize;
   font-family: Helvetica, 'Microsoft YaHei', sans-serif;
   line-height: $baseLineHeight;
-  background-color: $white;
+  background-color: $grayUltraLight;
   color: $gray;
   @include text-size-adjust;
 }

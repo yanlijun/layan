@@ -1,0 +1,12 @@
+﻿[
+	{
+	    "id": "1",
+		"name": "爱奇艺视频",
+		"imageUrl": "images/source/source_01.jpg"
+	},
+	{
+	    "id": "2",
+		"name": "优酷视频",
+		"imageUrl": "images/source/source_01.jpg"
+	}
+]

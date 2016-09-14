@@ -1,0 +1,18 @@
+<ul class="v-list">
+    <li class="item s-bgc-w" ng-repeat="video in videos | filter:main.search | orderBy:orderProp">
+    	<h5 class="u-h5"><a href="#!/videos/{{video.navId}}/{{video.id}}">{{video.title}}</a></h5>
+        <div class="v-player">
+	        <video ng-src="{{video.sourceUrl}}" controls="controls">您的浏览器不支持 video 标签。</video>
+	        <div class="v-tools">{{video.broadcast / 10000 | number:0}}万次播放</div>
+        </div>
+        <!--<a href="#!/videos/{{video.navId}}/{{video.id}}"><img ng-src="{{video.imageUrl}}" style="width:100px;"></a>-->
+        <ol class="v-list-tools">
+        	<li><i class="u-ico s-bg-cov" style="background-image: url('{{video.sourceImgUrl}}');">来源</i><strong class="s-fc-b">{{video.sourceName}}</strong></li>
+        	<li><i class="u-ico u-ico-like">点赞</i>{{video.praise}}</li>
+        	<li><i class="u-ico u-ico-comment">评论</i>{{video.comment}}</li>
+        	<li><i class="u-ico u-ico-share">分享</i>{{video.share}}</li>
+        </ol>
+    </li>
+</ul>
+
+

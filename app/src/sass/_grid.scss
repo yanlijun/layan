@@ -25,8 +25,9 @@
   @include flex(1 0);
 }
 .g-ft {
-  padding-top: $gridSpace * 2;
-  padding-bottom: $gridSpace * 2;
+  padding-top: $contextSpace;
+  padding-bottom: $contextSpace;
+  border-top: 1px solid $grayLight;
   font-size: 15px;
 }
 

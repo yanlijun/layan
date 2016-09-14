@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<!--[if lt IE 7]>     <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]>        <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 8]>        <html lang="en" ng-app="myApp" class="no-js lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!--><html lang="en" ng-app="myApp" class="no-js"><!--<![endif]-->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,46 +11,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="dist/css/style.min.css">
 </head>
-<body>
-<!--[if lt IE 7]>
-<p>您使用的是已经<strong>过时</strong>的浏览器。请<a href="http://browsehappy.com/">升级</a>到最新版本，或使用其他先进浏览器。</p>
-<![endif]-->
+<body ng-controller="MainCtrl as main">
 
+<!--[if lt IE 7]><p>您使用的是已经<strong>过时</strong>的浏览器。请<a href="http://browsehappy.com/">升级</a>到最新版本，或使用其他先进浏览器。</p><![endif]-->
 
-<ul class="menu" ng-controller="MenuCtrl as nav">
-    <li ng-class="{active:nav.isActive('/{{menu.url}}')}" ng-repeat="menu in nav.menus">
-        <a href="#!/{{menu.url}}">{{menu.name}}</a>
-    </li>
+<div class="g-doc">
 
-    <li ng-if="nav.curr">hidden</li>
-</ul>
+    <header class="g-hd">
+        <div class="g-mn s-bgc-r">
+            <div class="inside" ng-controller="NavCtrl as nav">
+                <!--<a href="#><img class="logo" src="images/logo.png" alt=""></a>-->
 
-<div ng-view></div>
+                <ul class="m-nav f-toe">
+                    <li ng-class="{sel: nav.category('/videos/all')}">
+                        <a href="#">全部</a>
+                    </li>
+                    <li ng-class="{sel: nav.category('/videos/{{menu.id}}')}" ng-repeat="menu in nav.menus">
+                        <a href="#!/videos/{{menu.id}}">{{menu.name}}</a>
+                    </li>
+                </ul>
 
-<div>Angular seed app: v<span app-version></span></div>
+                <ul class="m-crm">
+                    <li class="m-crm-name s-bgc-r" ng-class="{sel: nav.crumb()}">
+                    	<a href="javascript:history.go(-1)"><i class="u-ico u-ico-left">箭头</i></a>
+                    	<span class="s-fc-w">{{nav.crumbName}}详细</span>
+                    </li>
+                    <li class="m-crm-ipt s-bgc-w">
+                    	<a class="m-crm-ipt-close" href="javascript:"><i class="u-ico u-ico-left left-hover">箭头</i></a>
+                    	<input id="search" type="text" ng-model="main.search" placeholder="请输入关键字搜索">
+                    </li>
+                    <li class="m-crm-search f-tac"><label for="search"><i class="u-ico u-ico-search">搜索</i></label></li>
+                </ul>
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+    </header>
 
+    <div class="g-bd">
+        <div class="g-mn">
+            <div ng-view></div>
+        </div>
+    </div>
+
+    <footer class="g-ft s-bgc-w">
+        <div class="g-mn s-fc-gray">
+            <div class="inside">
+                <p>Copyright @ 2016 niuwan.net  All Rights Reserved.</p>
+                <p>Angular seed app: v<span app-version></span></p>
+            </div>
+        </div>
+    </footer>
+
+</div>
 
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
 <script src="dist/js/app.min.js"></script>
 <script src="components/version/version.js"></script>
 <script src="components/version/version-directive.js"></script>
 <script src="components/version/interpolate-filter.js"></script>
 <script>
-    angular.element(document).ready(function() {
-        var menu = document.getElementsByClassName('menu')[0];
-        var menuLi = menu.getElementsByTagName('li');
-
-        angular.forEach(menuLi, function(item, i) {
-            item.onclick = function() {
-                if (this.className) {
-                    //this.className = '';
-                } else {
-                    this.className = 'hover';
-                }
-            }
-        });
-    });
+	var ElemSearchBtn = document.getElementsByClassName('u-ico-search')[0];
+	var ElemCrumbSearch = document.getElementsByClassName('m-crm-ipt')[0];
+	var ElemCrumbSearchClose = document.getElementsByClassName('m-crm-ipt-close')[0];
+	ElemSearchBtn.onclick = function() {
+		ElemCrumbSearch.className = 'm-crm-ipt sel s-bgc-w';
+		ElemSearchBtn.className = 'u-ico u-ico-search search-hover';
+	}
+	ElemCrumbSearchClose.onclick = function() {
+		ElemCrumbSearch.className = 'm-crm-ipt s-bgc-w';
+		ElemSearchBtn.className = 'u-ico u-ico-search';
+	}
 </script>
 </body>
 </html>

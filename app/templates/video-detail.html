@@ -1,0 +1,26 @@
+<div class="inside v-detail s-bgc-w">
+	
+	<h5 class="u-h5">{{video.title}}</h5>
+    <div class="v-player">
+        <video ng-src="{{video.sourceUrl}}" controls="controls">您的浏览器不支持 video 标签。</video>
+        <div class="v-tools">{{video.broadcast / 10000 | number:0}}万次播放</div>
+    </div>
+	
+	<!--<img ng-src="{{video.imageUrl}}" style="width:100px;">-->
+	
+	<p>点赞数：{{video.praise}}</p>
+	
+	<p>评论数：{{video.comment}}</p>
+	
+	<p>视频源ID：{{video.sourceId}}</p>
+	
+	<p>视频源名称：{{video.sourceName}}</p>
+	
+	<p>视频源图片：<img ng-src="{{video.sourceImgUrl}}"></p>
+	
+	<p>类别ID：{{video.navId}}</p>
+	
+	<p>视频ID：{{video.id}}</p>
+	
+	<p>{{ 'Current version is v%VERSION%.' | interpolate }}</p>
+</div>

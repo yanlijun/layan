@@ -4,8 +4,17 @@
 /* http://docs.angularjs.org/#!angular.service */
 
 angular.module('myApp.services', [])
-    .factory('Phone', function($resource){
-        return $resource('phones/:id.json', {}, {
-            query: {method:'GET', params:{id:'phones'}, isArray:true}
+    .factory('Nav', ['$resource', function($resource) {
+        return $resource('data/nav.json');
+    }])
+    .factory('Videos', ['$resource', function($resource) {
+        return $resource('data/videos_:navId.json', {}, {
+            query: {method: 'GET', params: {navId: 'all'}, isArray: true}
         });
-    });
+    }])
+    .factory('Video', ['$resource', function($resource) {
+        return $resource('data/videos_:navId-:id.json');
+    }])
+    .factory('Source', ['$resource', function($resource) {
+        return $resource('data/source_:id.json');
+    }]);

@@ -1,0 +1,26 @@
+﻿[
+	{
+	    "id": "2",
+		"navId": "2",
+		"sourceId": "1",
+		"title": "美国苹果真正好吃的原因，好吃尼玛!",
+		"imageUrl": "images/video/video_01.jpg",
+		"sourceUrl": "http://7xu8zs.com1.z0.glb.clouddn.com/i0021fgfj1s.p412.1.mp4",
+		"broadcast": "2336548",
+		"praise": "6510",
+		"comment": "9100",
+		"share": "18100"
+	},
+	{
+	    "id": "4",
+		"navId": "2",
+		"sourceId": "1",
+		"title": "美国苹果真正好吃的原因，好吃你全家!",
+		"imageUrl": "images/video/video_01.jpg",
+		"sourceUrl": "http://7xu8zs.com1.z0.glb.clouddn.com/0038E5qbjx06ZIBTAcTu05040100zIQb0k01.mp4",
+		"broadcast": "2336548",
+		"praise": "6510",
+		"comment": "9100",
+		"share": "18100"
+	}	
+]

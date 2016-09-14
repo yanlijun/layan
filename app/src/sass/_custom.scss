@@ -1,19 +1,27 @@
-/*ADK Download*/
-.m-tb-dl { /*download*/
-  margin-bottom: $gridSpace * 3;
-
-  th,
-  td {
-    padding: $contextSpace * 2 $gridSpace * 2;
-    text-align: center;
-  }
+.g-hd .inside {
+    position: relative;
 }
-/*Login & Register*/
-.login-box {
-  min-width: 500px;
-  padding: $gridSpace * 4 $gridSpace * 6;
 
-  .u-h3 {
-    margin-bottom: $gridSpace * 3;
-  }
+.v-list {
+    
+    .item {
+    margin-top: $gridSpace;
+    padding: $contextSpace;
+    }
+    .v-list-tools {
+        @extend %display-flex;
+        @include justify-content(space-around);
+        margin-top: $contextSpace;
+        font-size: 15px;
+        .u-ico {
+            width: 15px * $baseLineHeight;
+            margin-right: $contextSpace / 2;
+            vertical-align: baseline;
+        }
+    }
+}
+.v-player {
+    video {
+        width: 100%;
+    }
 }
