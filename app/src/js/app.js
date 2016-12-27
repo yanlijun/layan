@@ -24,7 +24,8 @@ angular.module('myApp', [
        // Allow same origin resource loads.
        'self',
        // Allow loading from our assets domain.  Notice the difference between * and **.
-       'http://7xu8zs.com1.z0.glb.clouddn.com/**']);
+       'http://7xu8zs.com1.z0.glb.clouddn.com/**',
+	   'http://ogqa7iysz.bkt.clouddn.com/**']);
 
     }]);
 
